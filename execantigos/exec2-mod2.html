@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso java script</title>
+</head>
+
+<h1>Curso DEV</h1>
+
+<body>
+
+    <div id="app">
+    
+
+
+    </div>
+
+
+    <script>
+
+        var bntElement = document.createElement('button');
+        bntElement.setAttribute('id', 'Quadrado');
+
+        var textElement = document.createTextNode('Criar');
+        bntElement.appendChild(textElement);
+
+        var botao = document.querySelector('#app');
+        botao.appendChild(bntElement);
+
+        //var boot = document.createElement('')
+
+        function teste(x){
+            x.style.backgroundColor= getRandomColor();
+            
+        }
+        function teste2(y){
+            y.style.backgroundColor='#f00';
+        
+        }
+
+        bntElement.onclick = (gerarQuadrado);
+        
+
+
+        
+        function gerarQuadrado() {
+
+
+            var boxElement = document.createElement('div');
+                        
+
+            boxElement.setAttribute('class', 'box');
+            boxElement.setAttribute('onmouseover','teste(this)');
+            boxElement.setAttribute('onmouseout', 'teste2(this)');
+
+            
+            var container = document.querySelector('#app');
+            container.appendChild(boxElement);
+            
+
+
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.margin = 4;
+            boxElement.style.backgroundColor = '#f00';
+
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor(); // #E943F0
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+var bntElement = document.createElement('button');
+bntElement.setAttribute('id', 'Quadrado');
+
+var textElement = document.createTextNode('Criar');
+bntElement.appendChild(textElement);
+
+var botao = document.querySelector('#app');
+botao.appendChild(bntElement);
+
+         
+   
+    bntElement.onclick =(gerarQuadrado);
+    function gerarQuadrado(){
+    let boxElement = document.createElement('div')
+
+    boxElement.setAttribute('class','box');
+
+    boxElement.onmouseover=(getRandomColor);
+    function getRandomColor() {
+    var letters = "0123456789ABCDEF";
+    var color = "#";
+    for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+    }
+    var newColor = getRandomColor(); // #E943F0
+        
+    let container = document.querySelector('#app');
+    container.appendChild(boxElement);
+
+
+    boxElement.style.width = 100;
+    boxElement.style.height = 100;
+    boxElement.style.margin = 4;
+    boxElement.style.backgroundColor = ('#f00');
+
+}
+
+
